@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import styles from "../../../styles/tama-no-kaze/header.module.scss";
-import hamburger from "../../../styles/tama-no-kaze/hamburger.module.scss";
+import styles from "@/styles/tama-no-kaze/header.module.scss";
+import hamburger from "@/styles/tama-no-kaze/hamburger.module.scss";
 import Navigation from "./navigation";
+
+const basePath = "https://satonari205.github.io/lp-showcase/";
 
 export default function Header () {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +15,7 @@ export default function Header () {
     <header className={styles.header}>
       {/* ロゴ */}
       <div className={styles.logo}>
-        <Image src="/logo.jpg" alt="多摩の風" width={50} height={50} />
+        <Image src={`${basePath}/logo.jpg`} alt="多摩の風" width={50} height={50} />
       </div>
 
       {/* ハンバーガーメニュー */}

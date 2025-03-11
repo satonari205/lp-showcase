@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import styles from "../../../styles/tama-no-kaze/hamburger.module.scss";
+import styles from "@/styles/tama-no-kaze/hamburger.module.scss";
 
 export default function Hamburger() {
   const [isOpen, setIsOpen] = useState(false);

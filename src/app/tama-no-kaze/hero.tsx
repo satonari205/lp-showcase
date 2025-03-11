@@ -1,4 +1,4 @@
-import styles from "../../../styles/tama-no-kaze/hero.module.scss";
+import styles from "@/styles/tama-no-kaze/hero.module.scss";
 
 export default function Hero() {
   return (

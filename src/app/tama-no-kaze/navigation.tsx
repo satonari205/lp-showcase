@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../../../styles/tama-no-kaze/navigation.module.scss";
+import styles from "@/styles/tama-no-kaze/navigation.module.scss";
 
 export default function Navigation({ isOpen }: { isOpen: boolean }) {
     return (

@@ -1,4 +1,4 @@
-import styles from "../../../styles/tama-no-kaze/shopCart.module.scss";
+import styles from "@/styles/tama-no-kaze/shopCart.module.scss";
 
 export default function ShopCart() {
   return (

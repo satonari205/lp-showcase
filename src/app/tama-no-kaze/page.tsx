@@ -3,7 +3,7 @@ import { Shippori_Mincho } from "next/font/google";
 import Loader from "./loader";
 import Header from "./header";
 import Hero from "./hero";
-import styles from "../../../styles/tama-no-kaze/page.module.scss";
+import styles from "@/styles/tama-no-kaze/page.module.scss";
 
 export const metadata: Metadata = {
   title: "多摩の風",

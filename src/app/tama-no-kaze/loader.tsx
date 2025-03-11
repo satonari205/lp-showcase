@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import styles from "../../../styles/tama-no-kaze/loader.module.scss";
+import styles from "@/styles/tama-no-kaze/loader.module.scss";
 
 const Loader = () => {
   const loaderRef = useRef<HTMLDivElement>(null);
