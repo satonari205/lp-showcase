@@ -8,10 +8,10 @@ const nextConfig: NextConfig = {
   //   loader: "custom",
   //   loaderFile: "./lib/loader.ts",
   // },
-  sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
-    additionalData: `@use "./variables.module.scss" as *;`,
-  },
+  // sassOptions: {
+  //   includePaths: [path.join(__dirname, "styles")],
+  //   additionalData: `@use "./variables.module.scss" as *;`,
+  // },
 };
 
 export default nextConfig;

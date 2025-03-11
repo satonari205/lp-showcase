@@ -1,3 +1,5 @@
+@use "./variables.module.scss" as *;
+
 .shopLink {
   position: fixed;
   z-index: 1000;
