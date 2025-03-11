@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from '@/styles/tama-no-kaze/shopLink.module.scss';
 import ShopCart from './shopCart';
 
-const basePath = 'https://satonari205.github.io/lp-showcase/';
+// const basePath = 'https://satonari205.github.io/lp-showcase/';
 
 export default function ShopLink () {
   return (
