@@ -1,0 +1,50 @@
+.hamburger {
+  position: absolute;
+  z-index: 1000;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 各バーの基本スタイル */
+.bar {
+  position: absolute;
+  height: 2px;
+  background-color: $primary;
+  border-radius: 2px;
+  transition: transform 0.3s ease, width 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+/* 不揃いな初期状態 */
+/* 上側のバー：短め */
+.hamburger .bar:nth-child(1) {
+  width: 32px;
+  top: 12px;
+  right: 0;
+  transform-origin: right top;
+}
+
+/* 下側のバー：長め */
+.hamburger .bar:nth-child(2) {
+  width: 24px;
+  bottom: 12px;
+  right: 0;
+  transform-origin: right top;
+}
+
+/* クリック時（openクラスが付与されると）、✖️の形に変化 */
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(-4px) rotate(-45deg);
+  width: 32px;
+  transform-origin: right top;
+}
+
+.hamburger.open .bar:nth-child(2) {
+  transform: translateY(4px) rotate(45deg);
+  width: 32px;
+}
