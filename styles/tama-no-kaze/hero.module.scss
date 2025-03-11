@@ -1,3 +1,5 @@
+@use "./variables.module.scss" as *;
+
 .hero {
   position: relative;
   z-index: 1;

@@ -3,7 +3,6 @@ import { Shippori_Mincho } from "next/font/google";
 import Loader from "./loader";
 import Header from "./header";
 import Hero from "./hero";
-// import ShopLink from "./shopLink";
 import styles from "../../../styles/tama-no-kaze/page.module.scss";
 
 export const metadata: Metadata = {
