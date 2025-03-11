@@ -15,7 +15,7 @@ export default function Header () {
     <header className={styles.header}>
       {/* ロゴ */}
       <div className={styles.logo}>
-        <Image src={`${basePath}/logo.jpg`} alt="多摩の風" width={50} height={50} />
+        <Image src={`${basePath}logo.jpg`} alt="多摩の風" width={50} height={50} />
       </div>
 
       {/* ハンバーガーメニュー */}
