@@ -5,13 +5,109 @@
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+  padding: 20px;
 }
 
-.productCard {
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
   padding: 1rem;
-  border-radius: 8px;
-  background-color: #fff;
+  transition: all 0.5s;
+
+  &:hover {
+    .image {
+      transform: scale(1.02);
+    }
+
+    .shopLink {
+      color: $primary;
+      border: 1px solid $primary;
+    }
+
+    .contentTitle::after {
+      transform: translateX(30px);
+    }
+
+    // ここでstrokeの色を変更する
+    polyline,
+    path {
+      stroke: $primary;
+      transform: translateX(3px);
+    }
+  }
+}
+
+.image {
+  margin: 0 auto;
+  transition: all 0.5s;
+}
+
+.content {
+  margin: 30px auto;
+  gap:10px;
+}
+
+.contentTitle {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 6px;
+  margin: 1rem 0;
+}
+
+.subTitle {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 6px;
+  margin: 1rem 0;
+}
+
+.text {
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+}
+
+.contentTitle::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: $primary;
+  margin: 10px auto;
+  transition: all 0.5s;
+}
+
+.shopLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  border: 1px solid #333;
+}
+
+.arrow {
+  width: 25px;
+  height: 25px;
+}
+
+.arrow rect,
+.arrow polyline,
+.arrow path {
+  fill: none;
+}
+
+.arrow polyline,
+.arrow path {
+  stroke: #333;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.5s;
+  stroke-width: 2px;
 }

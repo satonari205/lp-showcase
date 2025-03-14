@@ -1,0 +1,10 @@
+@use "./variables.module.scss" as *;
+
+.philosophy {
+  padding: 20px;
+  background: $background;
+}
+
+.item {
+  margin: 20px 0;
+}

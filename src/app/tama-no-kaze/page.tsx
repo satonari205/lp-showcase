@@ -5,6 +5,7 @@ import Header from "./header";
 import Hero from "./hero";
 import Introduction from "./introduction";
 import Products from "./products";
+import Philosophy from "./philosophy";
 import styles from "@/styles/tama-no-kaze/page.module.scss";
 
 export const metadata: Metadata = {
@@ -36,6 +37,9 @@ export default function Home() {
 
         {/* 商品紹介 */}
         <Products />
+
+        {/* 杜氏の思い */}
+        <Philosophy />
 
         {/* ECリンク */}
         {/* <ShopLink /> */}

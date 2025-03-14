@@ -3,9 +3,8 @@
 .introduction {
   position: relative;
   z-index: 1;
-  height: 90vh;
   width: 100%;
-  padding: 40px;
+  margin: 100px 0;
 }
 
 .content {
@@ -32,8 +31,7 @@
   writing-mode: vertical-rl;
   font-size: 0.9rem;
   letter-spacing: 0.2rem;
-  font-weight: bold;
-  color: $primary;
+  font-weight: 300;
 
   @media (min-width: 768px) {
     font-size: 1.1rem;

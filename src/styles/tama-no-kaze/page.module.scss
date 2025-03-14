@@ -10,3 +10,25 @@
   max-width: 1280px;
   margin: 0 auto;
 }
+
+.sectionTitle {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 2rem 0;
+  padding: 20px 0;
+  background: white;
+
+  @media (min-width: 768px) {
+    padding: 40px 0;
+  }
+}
+
+.sectionTitle::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: $primary;
+  margin: 10px auto;
+}
