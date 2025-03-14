@@ -23,7 +23,7 @@ export default function Home() {
     <main className={`${styles.main} ${shipporiMincho.className}`}>
       <div className={styles.wrapper}>
         {/* ローダー */}
-        {/* <Loader /> */}
+        <Loader />
 
         {/* ヘッダー */}
         <Header/>
