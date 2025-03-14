@@ -91,23 +91,3 @@
   padding: 15px 20px;
   border: 1px solid #333;
 }
-
-.arrow {
-  width: 25px;
-  height: 25px;
-}
-
-.arrow rect,
-.arrow polyline,
-.arrow path {
-  fill: none;
-}
-
-.arrow polyline,
-.arrow path {
-  stroke: #333;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: all 0.5s;
-  stroke-width: 2px;
-}

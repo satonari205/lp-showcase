@@ -1,37 +1,121 @@
+@use "./variables.module.scss" as *;
+
 .media {
   width: 100%;
+  padding: 50px 0;
 }
 
 .blogs {
-  display: grid;
-  /* カラムは幅250px以上、空いたスペースに合わせて自動調整 */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  /* アイテムの自動配置で不揃いな並びに */
-  grid-auto-flow: dense;
-}
+  margin: 0;
+  margin-bottom: 30px;
 
-.blog {
-  background: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-
-  /* ホバー時にふわっと浮くアニメーション */
-  &:hover {
-    transform: translateY(-5px);
+  @media (min-width: $sm) {
+    margin: 50px 0 100px 0;
   }
 }
 
-.image {
+.blog {
+  position: relative;
+  z-index: 10;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+@media (min-width: $lg) {
+  @for $i from 1 through 4 {
+    .blog:nth-child(#{$i}) {
+      margin-top: #{($i - 1) * 30px};
+      animation: hovering infinite #{$i + 3}s;
+      animation-delay: #{$i * 0.5}s;
+    }
+  }
+}
+
+@keyframes hovering {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.imageWrapper {
+  position: relative;
   width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 12px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
 .title {
-  font-size: 1rem;
-  margin-bottom: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 240px;
+  padding: 16px 24px;
+  background-color: white;
+  font-size: 0.9rem;
+}
+
+.titleTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.genre {
+  padding: 5px 10px;
+  color: $background;
+  background-color: $primary;
+}
+
+.article {
+  background: $secondary;
+}
+
+.shopLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  border: 1px solid #333;
+
+  &:hover {
+    color: $primary;
+    border: 1px solid $primary;
+
+    // ここでstrokeの色を変更する
+    polyline,
+    path {
+      stroke: $primary;
+      transform: translateX(3px);
+    }
+  }
 }

@@ -7,6 +7,7 @@ import Introduction from "./introduction";
 import Products from "./products";
 import Philosophy from "./philosophy";
 import Media from "./media";
+import Links from './links';
 import styles from "@/styles/tama-no-kaze/page.module.scss";
 
 export const metadata: Metadata = {
@@ -44,6 +45,9 @@ export default function Home() {
 
         {/* ブログ */}
         <Media />
+
+        {/* リンク */}
+        <Links />
       </div>
     </main>
   );

@@ -1,0 +1,58 @@
+@use "./variables.module.scss" as *;
+
+.links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding:50px 0;
+
+  @media (min-width: $md) {
+    flex-direction: row;
+    padding: 100px 0;
+  }
+}
+
+.link {
+  width: 100%;
+  padding: 50px;
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: $primary;
+    color: $background;
+  }
+}
+
+.toStore {
+  color: $primary;
+  border-top: 1px solid $primary;
+  border-left: 1px solid $primary;
+  border-bottom: 1px solid $primary;
+  border-right: 1px solid $primary;
+
+  @media (min-width: $md) {
+    border-right: none;
+  }
+
+  &:hover {
+    color: $background;
+    background-color: $primary;
+  }
+}
+
+.toContact {
+  color: $secondary;
+  border-top: 1px solid $secondary;
+  border-left: 1px solid $secondary;
+  border-bottom: 1px solid $secondary;
+  border-right: 1px solid $secondary;
+
+  @media (min-width: $md) {
+    border-right: none;
+  }
+
+  &:hover {
+    color: $background;
+    background-color: $secondary;
+  }
+}

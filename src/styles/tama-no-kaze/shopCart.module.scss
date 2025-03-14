@@ -11,7 +11,6 @@
 
 /* SVG 内の st0 クラスの要素の色を上書き */
 .st0 {
-  fill: $background;  // 線（塗り）の色を赤に変更
+  fill: $primary;  // 線（塗り）の色を赤に変更
   /* stroke プロパティを使う場合は、stroke も指定できます */
-  /* stroke: #0000ff; */
 }
