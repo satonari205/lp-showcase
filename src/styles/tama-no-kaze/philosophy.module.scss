@@ -1,10 +1,114 @@
 @use "./variables.module.scss" as *;
 
 .philosophy {
-  padding: 20px;
+  width: 100%;
+  // height: 100vh;
   background: $background;
 }
 
 .item {
-  margin: 20px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  /* 高さは画像のアスペクト比に応じて設定（例：固定高さやパディングテクニックを利用） */
+  height: 200px;
+  overflow: hidden;
+
+  @media (min-width: $md) {
+    height: 300px;
+  }
+
+  @media (min-width: $xl) {
+    height: 400px;
+  }
+
+  /* 幕と画像の両方に共通する初期状態 */
+  .curtain,
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+  }
+
+  /* 黒い幕は画像の下に表示 */
+  .curtain {
+    background-color: #333;
+    z-index: 2;
+  }
+
+  /* 画像は幕より上に表示 */
+  .image {
+    z-index: 1;
+    object-fit: cover;
+  }
+
+  /* active クラスが付いたらスライドインする */
+  &.active {
+    .curtain {
+      animation: slideInOut 1s ease-out forwards;
+    }
+    .image {
+      animation: slideIn 0.5s ease-out forwards;
+      // animation-delay: 0.5s; // 幕より少し遅れて出現
+    }
+  }
+}
+
+/* slideInOut キーフレーム */
+@keyframes slideInOut {
+  from {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* slideIn キーフレーム */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.content {
+  width: 100%;
+  padding: 50px 20px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+
+  @media (min-width: $md) {
+    padding: 60px 20px 120px 20px;
+  }
+
+  @media (min-width: $lg) {
+    text-align: center;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.text {
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
 }

@@ -1,0 +1,37 @@
+.media {
+  width: 100%;
+}
+
+.blogs {
+  display: grid;
+  /* カラムは幅250px以上、空いたスペースに合わせて自動調整 */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  /* アイテムの自動配置で不揃いな並びに */
+  grid-auto-flow: dense;
+}
+
+.blog {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  /* ホバー時にふわっと浮くアニメーション */
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
