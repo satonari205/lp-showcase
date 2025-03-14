@@ -6,6 +6,20 @@
   height: 90vh;
   width: 100%;
   padding: 80px 20px 0 20px;
+  writing-mode: vertical-rl;
+}
+
+.title {
+  position: absolute;
+  z-index: 500;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  letter-spacing: 0.3rem;
+  font-weight: bold;
+  color: $background;
+  writing-mode: vertical-rl; // 縦書き
 }
 
 .slideshow {

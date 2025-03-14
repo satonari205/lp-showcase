@@ -1,10 +1,14 @@
 import styles from "@/styles/tama-no-kaze/hero.module.scss";
+import page from "@/styles/tama-no-kaze/page.module.scss";
 
 const basePath = "https://satonari205.github.io/lp-showcase/";
 
 export default function Hero() {
   return (
-    <section id="hero" className={styles.hero}>
+    <section id="hero" className={`${styles.hero} ${page.wrapper}`}>
+      {/* コピー */}
+      <h1 className={styles.title}>自然が育んだ、多摩の旨さを全国へ</h1>
+
       {/* スライドショー */}
       <div className={styles.slideshow}>
         <div

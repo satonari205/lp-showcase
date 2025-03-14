@@ -7,7 +7,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: $background;
+  background: rgba($background, 0.9);
   display: flex; /* 常に flex にしておく */
   justify-content: center;
   align-items: center;

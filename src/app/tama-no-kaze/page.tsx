@@ -3,6 +3,8 @@ import { Shippori_Mincho } from "next/font/google";
 import Loader from "./loader";
 import Header from "./header";
 import Hero from "./hero";
+import Introduction from "./introduction";
+import Products from "./products";
 import styles from "@/styles/tama-no-kaze/page.module.scss";
 
 export const metadata: Metadata = {
@@ -19,17 +21,25 @@ const shipporiMincho = Shippori_Mincho({
 export default function Home() {
   return (
     <main className={`${styles.main} ${shipporiMincho.className}`}>
-      {/* ローダー */}
-      <Loader />
+      <div className={styles.wrapper}>
+        {/* ローダー */}
+        {/* <Loader /> */}
 
-      {/* ヘッダー */}
-      <Header></Header>
+        {/* ヘッダー */}
+        <Header/>
 
-      {/* メインコンテンツ */}
-      <Hero />
+        {/* メインコンテンツ */}
+        <Hero />
 
-      {/* ECリンク */}
-      {/* <ShopLink /> */}
+        {/* コピー */}
+        <Introduction />
+
+        {/* 商品紹介 */}
+        <Products />
+
+        {/* ECリンク */}
+        {/* <ShopLink /> */}
+      </div>
     </main>
   );
 }

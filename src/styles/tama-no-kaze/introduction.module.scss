@@ -1,0 +1,42 @@
+@use "./variables.module.scss" as *;
+
+.introduction {
+  position: relative;
+  z-index: 1;
+  height: 90vh;
+  width: 100%;
+  padding: 40px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+
+  @media (min-width: 768px) {
+    padding: 100px 0;
+  }
+}
+
+.sentence {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    gap: 40px;
+  }
+}
+
+.sentence span {
+  writing-mode: vertical-rl;
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  color: $primary;
+
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+    letter-spacing: 0.3rem;
+  }
+}

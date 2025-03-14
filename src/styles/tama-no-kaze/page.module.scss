@@ -1,11 +1,12 @@
 @use "./variables.module.scss" as *;
 
 .main {
-  position: relative;
-  height: 100vh;
+  width: 100%;
+  background: $background;
+}
+
+.wrapper {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  writing-mode: vertical-rl;
-  background: $background;
 }
