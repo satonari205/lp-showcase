@@ -1,18 +1,44 @@
 @use './variables.module.scss' as *;
 
 .footer {
+  backdrop-filter: brightness(0.5);
+  background: url('https://satonari205.github.io/lp-showcase/philosophy2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $background;
+  /* 背景画像と背景色をブレンド */
+  background: 
+    url('https://satonari205.github.io/lp-showcase/philosophy2.jpg') center/cover no-repeat,
+    rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+}
+
+.wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  writing-mode: vertical-rl;
   color: $background;
+  padding: 30px;
+}
 
-  a {
-    color: $background;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
+.list {
+  display: flex;
+  flex-direction: column;
+  writing-mode: vertical-rl;
+  margin: 0;
+  padding: 30px;
+  list-style: none;
+
+  li {
+    margin: 0.5rem;
   }
+}
+
+.copyright {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
 }

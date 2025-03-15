@@ -3,11 +3,11 @@
 .links {
   display: flex;
   flex-direction: column;
-  padding:50px 0;
-
+  margin-top: 50px;
+  
   @media (min-width: $md) {
     flex-direction: row;
-    padding: 100px 0;
+    margin-top: 100px;
   }
 }
 
@@ -24,15 +24,8 @@
 }
 
 .toStore {
-  color: $primary;
-  border-top: 2px solid $primary;
-  border-left: 2px solid $primary;
-  border-bottom: 2px solid $primary;
-  border-right: 2px solid $primary;
-
-  // @media (min-width: $md) {
-  //   border-right: none;
-  // }
+  color: $background;
+  background-color: $primary;
 
   &:hover {
     color: $background;
@@ -41,16 +34,6 @@
 }
 
 .toContact {
-  color: $secondary;
-  border-top: 2px solid $secondary;
-  border-left: 2px solid $secondary;
-  border-bottom: 2px solid $secondary;
-  border-right: 2px solid $secondary;
-
-  // @media (min-width: $md) {
-  //   border-right: none;
-  // }
-
   &:hover {
     color: $background;
     background-color: $secondary;
