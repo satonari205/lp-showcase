@@ -24,14 +24,14 @@ export default function Home() {
           />
           <h2>多摩の風</h2>
         </Link>
-        <Link className={styles.link} href="/tama-no-kaze">
+        <Link className={styles.link} href="/douce-mignon">
           <Image
             src={`${basePath}lp-1.jpg`}
             alt="tama-no-kaze"
             width={300}
             height={300}
           />
-          <h2>作成中</h2>
+          <h2>Douce Mignon</h2>
         </Link>
         <Link className={styles.link} href="/tama-no-kaze">
           <Image
