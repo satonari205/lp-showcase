@@ -1,0 +1,97 @@
+@use './variables.module.scss' as *;
+
+.hero {
+  position: relative;
+  z-index: 2;
+  color: $text;
+  height: 90vh;
+  width: 100%;
+  text-align: center;
+}
+
+.logo {
+  position: absolute;
+  z-index: 4;
+  top: -20px;
+  left: -10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.top {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  clip-path: circle(55% at 50% 50%);
+  overflow: hidden; /* 子要素がクリップ外に出ないよう必須 */
+}
+
+.title {
+  position: absolute;
+  z-index: 4;
+  bottom: 100px;
+  right: 10px;
+  color: $background;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.subTitle {
+  position: absolute;
+  z-index: 4;
+  bottom: 200px;
+  left: 10px;
+  writing-mode: vertical-rl;
+  color: $background;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* スライダー： .top の子要素としてクリップ領域内に収まる */
+.slider {
+  /* 親の .top (relative) 内で絶対位置指定 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* z-index は親より低くするか同程度にする。
+     クリップ領域で切り抜くため .top の z-index より大きいと外に出てしまう */
+  z-index: 2;
+}
+
+.heroImage {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ↓グローバル宣言ブロックの書き方 */
+// :global {
+//   .splide__arrow {
+//     background-color: rgba(255, 255, 255, 0.7);
+//     border: none;
+//     width: 30px;
+//     height: 30px;
+//     border-radius: 50%;
+//     cursor: pointer;
+//   }
+//   .splide__arrow:hover {
+//     background-color: rgba(255, 255, 255, 0.9);
+//   }
+//   .splide__arrow--prev {
+//     bottom: 10px;
+//     left: 10px;
+//     right: auto;
+//   }
+//   .splide__arrow--next {
+//     bottom: 10px;
+//     right: 10px;
+//     left: auto;
+//   }
+// }

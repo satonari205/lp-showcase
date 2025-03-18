@@ -1,0 +1,9 @@
+@use './variables.module.scss' as *;
+
+.page {
+  position: relative;
+  z-index: 2;
+  background: $background;
+  width: 100%; // 最大幅は$sm(=576px)
+  min-height: 200vh;
+}

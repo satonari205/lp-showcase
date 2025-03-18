@@ -1,0 +1,44 @@
+@use 'sass:color';
+@use './variables.module.scss' as *;
+
+.menu {
+  display: block;
+  position: fixed;
+  z-index: 10;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  padding: 10px;
+  color: $pink;
+  background-color: $text;
+  border: 3px solid $text;
+  border-radius: 30px;
+  font-weight: bold;
+
+  @media (min-width: $md) {
+    display: none;
+  }
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 100vh;
+  width: 100vw;
+  background-color: color.adjust($text, $lightness: 1%);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s;
+
+  @media (min-width: $md) {
+    display: none;
+  }
+}
+
+.mask.open {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}

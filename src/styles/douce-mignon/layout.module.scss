@@ -1,0 +1,46 @@
+@use 'sass:color';
+@use './variables.module.scss' as *;
+
+.layout {
+  position: relative;
+  background-color: $background;
+  color: $text;
+}
+
+.main {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: $sm;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: $md) {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+  }
+}
+
+.aside {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: calc((100% - 400px) / 2);
+  height: 100vh;
+  background-color: color.adjust($text, $lightness: 1%);
+
+  @media (min-width: $md) {
+    display: block;
+  }
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}

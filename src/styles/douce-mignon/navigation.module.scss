@@ -1,0 +1,44 @@
+@use 'sass:color';
+@use './variables.module.scss' as *;
+
+.navi {
+  height: 100vh;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.naviHeading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.naviList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.naviListItem {
+  display: block;
+  padding: 10px 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50%;
+  transition: all 0.5s;
+
+  &:hover {
+    background: color.adjust($pink, $lightness: -40%);
+  }
+}
+
+.subTitle {
+  color: color.adjust($text, $lightness: 30%);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
