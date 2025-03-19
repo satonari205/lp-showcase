@@ -1,0 +1,91 @@
+@use './variables.module.scss' as *;
+
+.sweets {
+  position: relative;
+  width: 100%;
+  background: $background;
+  min-height: 200vh;
+  overflow-y: visible;
+}
+
+.sweetsSticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: visible;
+}
+
+.cardStack {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 320px;
+  padding: 20px;
+  height: 400px;
+  border-radius: 30px;
+  background-color: $pink;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease; /* スムーズに動かす */
+}
+
+.imageWrapper {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* 丸く切り抜く */
+  background-color: $text;
+  clip-path: circle(50% at 50% 50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+.cardContent {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+
+  h3 {
+    display: block;
+    width: 240px;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    border-top: 2px solid $text;
+    border-bottom: 2px solid $text;
+  }
+
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  span {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}

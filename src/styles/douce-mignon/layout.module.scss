@@ -30,7 +30,7 @@
   top: 0;
   width: calc((100% - 400px) / 2);
   height: 100vh;
-  background-color: color.adjust($text, $lightness: 1%);
+  background-color: color.adjust($background, $lightness: 1%);
 
   @media (min-width: $md) {
     display: block;

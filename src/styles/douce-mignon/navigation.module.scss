@@ -33,7 +33,7 @@
   transition: all 0.5s;
 
   &:hover {
-    background: color.adjust($pink, $lightness: -40%);
+    background: color.adjust($pink, $lightness: -1%);
   }
 }
 

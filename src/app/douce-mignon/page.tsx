@@ -3,6 +3,7 @@ import Hero from './hero';
 import Menu from './menu';
 import Introduction from './introduction';
 import Sweets from './sweets';
+import ShopInfo from './shopInfo';
 
 export default function DouceMignon() {
   return (
@@ -18,6 +19,9 @@ export default function DouceMignon() {
 
       {/* メニュー */}
       <Sweets />
+
+      {/* 店舗情報 */}
+      <ShopInfo />
     </div>
   );
 }
