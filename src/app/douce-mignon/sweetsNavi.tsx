@@ -6,6 +6,9 @@ export default function SweetsNav() {
     <nav className={styles.sweetsNavi}>
       <ul>
         <li>
+          <Link href="/">LP一覧へ</Link>
+        </li>
+        {/* <li>
           <Link href="#sweets1">スイーツ１</Link>
         </li>
         <li>
@@ -13,10 +16,7 @@ export default function SweetsNav() {
         </li>
         <li>
           <Link href="#sweets1">スイーツ１</Link>
-        </li>
-        <li>
-          <Link href="#sweets1">スイーツ１</Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

@@ -1,9 +1,27 @@
+@use "sass:color";
 @use './variables.module.scss' as *;
 
 .page {
-  position: relative;
-  z-index: 2;
   background: $background;
   width: 100%; // 最大幅は$sm(=576px)
   min-height: 200vh;
+}
+
+.sectionTitle {
+  position: relative;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 20px 0;
+  text-align: center;
+  background: color.adjust($background, $lightness: 3%);
+
+  .sub {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: color.adjust($text, $lightness: 30%);
+  }
 }

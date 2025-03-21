@@ -1,5 +1,103 @@
+@use "sass:color";
 @use './variables.module.scss' as *;
 
 .shopInfo {
-  min-height: 100vh;
+  position: relative;
+  height: 100vh;
+  // background: color.adjust($background, $lightness: -50%);
+  // background-image: url('../../../public/douce-mignon/introduction2.jpg');
+  // background-size: cover;
+  // background-position: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: color.adjust($background, $lightness: -80%);
+    opacity: 0.8;
+  }
+}
+
+.info {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $background;
+  background: color.adjust($background, $lightness: -50%);
+  background-image: url('https://satonari205.github.io/lp-showcase/douce-mignon/introduction2.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: color.adjust($background, $lightness: -80%);
+    opacity: 0.8;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: $background;
+}
+
+.mapLink {
+  border: $background 2px solid;
+  display: block;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  transition: background 0.5s;
+  
+  &:hover {
+    background: linear-gradient(45deg, #4285F4, #DB4437, #F4B400, #0F9D58);
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border: $background 1px solid;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: all 0.5s;
+
+  &:hover {
+    background: $blue;
+    color: $text;
+  }
+}
+
+.instaLink {
+  transition: background 0.5s;
+
+  &:hover {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    color: $background;
+  }
 }

@@ -10,10 +10,14 @@ const robotoSlab = Roboto_Slab({
 });
 
 const naviContent = [
-  { href: "#introduction", title: "À propos de Douce Mignon", subTitle: "・Douce Mignonについて・" },
+  {
+    href: "#introduction",
+    title: "À propos de Douce Mignon",
+    subTitle: "・Douce Mignonについて・",
+  },
   { href: "#sweets", title: "Nos douceurs", subTitle: "・お菓子一覧・" },
-  { href: "#patissier", title: "Le Pâtissier", subTitle: "・パティシエ・" },
-  { href: "#shop", title: "Boutique", subTitle: "・店舗・" },
+  // { href: "#patissier", title: "Le Pâtissier", subTitle: "・パティシエ・" },
+  { href: "#shopinfo", title: "Boutique", subTitle: "・店舗・" },
   { href: "#links", title: "Liens", subTitle: "・リンク・" },
 ];
 

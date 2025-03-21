@@ -2,7 +2,9 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from 'next/image';
+import { env } from '@/lib/env';
 import styles from '@/styles/douce-mignon/sweets.module.scss';
+import page from '@/styles/douce-mignon/page.module.scss';
 
 const sweets = [
   {
@@ -11,6 +13,7 @@ const sweets = [
     caption:
       "ふわふわのパンケーキに甘酸っぱいいちごと、とろけるクリームをたっぷりトッピング。見た目もキュートで、ひと口で幸せ気分に。",
     price: 850,
+    color: styles.pink,
   },
   {
     name: "カラフルマカロンセレクション",
@@ -18,6 +21,7 @@ const sweets = [
     caption:
       "パステルカラーがかわいい、サクふわ食感のマカロンセット。バニラやピスタチオ、フランボワーズなど人気フレーバーを詰め込みました。",
     price: 600,
+    color: styles.blue,
   },
   {
     name: "バニラアイスのとろけるショコラ",
@@ -25,6 +29,7 @@ const sweets = [
     caption:
       "濃厚チョコレートケーキの上に、冷たいバニラアイスをトッピング。温と冷のコントラストが楽しめる、ちょっぴり贅沢なスイーツです。",
     price: 780,
+    color: styles.orange,
   },
   {
     name: "ベリーのカラフルタルト",
@@ -32,6 +37,7 @@ const sweets = [
     caption:
       "サクサクのクッキー生地に、甘酸っぱいミックスベリーをたっぷりトッピング。カラフルで華やかな見た目は写真映え間違いなし！",
     price: 720,
+    color: styles.yellow,
   },
 ];
 
@@ -41,22 +47,33 @@ export default function Sweets() {
 
   useEffect(() => {
     const handleScroll = () => {
-
       if (!sectionRef.current) return;
-      
+
       // セクションの位置とサイズを取得
       const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
+
       // セクションが完全にスクロールし終わるまでの距離
-      const totalScroll = rect.height - windowHeight;
+      const totalScroll = rect.height - window.innerHeight;
+
       // 要素の上端がどれだけスクロールしたか（正の値に変換）
       const scrolled = Math.abs(rect.top);
-      
+
       // 進行度を 0〜1 の範囲にする
-      const newProgress = Math.min(scrolled / totalScroll, 1);
-      setProgress(newProgress);
-    }
+      if (rect.top < 0) {
+
+        const newProgress = Math.min(scrolled / totalScroll, 1);
+        
+        console.log(
+          rect,
+          totalScroll,
+          scrolled,
+          newProgress,
+        );
+
+        setProgress(newProgress);
+      }
+
+    };
 
     window.addEventListener("scroll", handleScroll);
 
@@ -69,6 +86,10 @@ export default function Sweets() {
   return (
     <section ref={sectionRef} id="sweets" className={styles.sweets}>
       <div className={styles.sweetsSticky}>
+        <h2 className={page.sectionTitle}>
+          <span>Nos douceurs</span>
+          <span className={page.sub}>・お菓子一覧・</span>
+        </h2>
         <div className={styles.cardStack}>
           {sweets.map((sweet, index) => (
             <Card
@@ -79,6 +100,7 @@ export default function Sweets() {
               image={sweet.image}
               caption={sweet.caption}
               price={sweet.price}
+              color={sweet.color}
             />
           ))}
         </div>
@@ -93,7 +115,8 @@ function Card ({
   name,
   image,
   caption,
-  price
+  price,
+  color,
 } : Readonly<{
   index:    number;
   progress: number;
@@ -101,25 +124,38 @@ function Card ({
   image:    string;
   caption:  string;
   price:    number;
+  color:    string;
 }>) {
   // 各カードの表示タイミングを決める
-  const cardProgress = (progress - index * 0.25) * 4; // 0〜1 を目安に
-  const clampedProgress = Math.min(Math.max(cardProgress, 0), 1);
+  const effectiveProgress = Math.min(Math.max((progress - index * 0.25) * 4, 0), 1);
 
-  // const translate = clampedProgress * -100; // vh/vw
-  const rotate = clampedProgress * 15; // deg
+  // スライドが始まるタイミング
+  const start = 0.8;
+
+  // カードが横方向にどこまで移動するか。進捗率 - 0.8して-150%まで動いてもらう。
+  const translateX = effectiveProgress >= start
+    ? `${50 + Math.abs(effectiveProgress - start) * 500}%`
+    : "-50%";
+
+  const rotate = effectiveProgress >= start
+    ? Math.abs(effectiveProgress - start) * 225
+    : 0;
 
   return (
     <div
-      className={styles.card}
+      className={`${styles.card} ${color}`}
+      id={`sweets${index + 1}`}
       style={{
-        transform: `translate(-50%, -50%) rotate(${rotate}deg)`,
+        zIndex: 8 - index,
+        transform: `translate(${translateX}, -50%) rotate(${rotate}deg)`,
+        marginTop: `${index * 4}px`,
+        marginLeft: `${index * 4}px`,
       }}
     >
       <div className={styles.imageWrapper}>
         <Image
           className={styles.image}
-          src={image}
+          src={`${env.basePath}${image}`}
           alt={name}
           width={180}
           height={180}
@@ -129,7 +165,6 @@ function Card ({
         <h3 className={styles.name}>{name}</h3>
         <p>{caption}</p>
         <span>¥{price}</span>
-        <span>¥{progress}</span>
       </div>
     </div>
   );

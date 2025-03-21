@@ -1,9 +1,9 @@
-import styles from '@/styles/douce-mignon/page.module.scss';
 import Hero from './hero';
 import Menu from './menu';
 import Introduction from './introduction';
 import Sweets from './sweets';
 import ShopInfo from './shopInfo';
+import styles from '@/styles/douce-mignon/page.module.scss';
 
 export default function DouceMignon() {
   return (

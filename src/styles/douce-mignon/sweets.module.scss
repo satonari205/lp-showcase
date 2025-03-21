@@ -1,35 +1,38 @@
+@use "sass:color";
 @use './variables.module.scss' as *;
 
 .sweets {
-  position: relative;
   width: 100%;
   background: $background;
-  min-height: 200vh;
-  overflow-y: visible;
+  height: 480svh;
 }
 
 .sweetsSticky {
   position: sticky;
   top: 0;
   width: 100%;
-  height: 100vh;
-  overflow: visible;
+  height: 100svh;
 }
 
 .cardStack {
+  position: relative;
+  z-index: 5;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  overflow: hidden;
+  background: url('https://satonari205.github.io/lp-showcase/douce-mignon/26034868.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .card {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  // transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,6 +44,22 @@
   background-color: $pink;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, opacity 0.3s ease; /* スムーズに動かす */
+}
+
+.pink {
+  background: $pink;
+}
+
+.blue {
+  background: $blue;
+}
+
+.yellow {
+  background: $yellow;
+}
+
+.orange {
+  background: $orange;
 }
 
 .imageWrapper {
