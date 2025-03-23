@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Noto_Sans } from "next/font/google";
+import { env } from "@/lib/env";
 import styles from "@/styles/page.module.scss";
 
 const notoSans = Noto_Sans({
@@ -8,7 +9,7 @@ const notoSans = Noto_Sans({
   display: "swap",
 });
 
-const basePath = "https://satonari205.github.io/lp-showcase/";
+const basePath = env.basePath;
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
       <div className={styles.links}>
         <Link className={styles.link} href="/tama-no-kaze">
           <Image
-            src={`${basePath}lp-1.jpg`}
+            src={`${basePath}lp-1.png`}
             alt="tama-no-kaze"
             width={300}
             height={300}
@@ -26,14 +27,14 @@ export default function Home() {
         </Link>
         <Link className={styles.link} href="/douce-mignon">
           <Image
-            src={`${basePath}lp-1.jpg`}
+            src={`${basePath}lp-2.png`}
             alt="tama-no-kaze"
             width={300}
             height={300}
           />
           <h2>Douce Mignon</h2>
         </Link>
-        <Link className={styles.link} href="/tama-no-kaze">
+        {/* <Link className={styles.link} href="/tama-no-kaze">
           <Image
             src={`${basePath}lp-1.jpg`}
             alt="tama-no-kaze"
@@ -41,7 +42,7 @@ export default function Home() {
             height={300}
           />
           <h2>作成中</h2>
-        </Link>
+        </Link> */}
       </div>
     </main>
   );
