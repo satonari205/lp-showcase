@@ -18,7 +18,7 @@ export default function Home() {
       <div className={styles.links}>
         <Link className={styles.link} href="/tama-no-kaze">
           <Image
-            src={`${basePath}lp-1.png`}
+            src={`${basePath}/lp-1.png`}
             alt="tama-no-kaze"
             width={300}
             height={300}
@@ -27,7 +27,7 @@ export default function Home() {
         </Link>
         <Link className={styles.link} href="/douce-mignon">
           <Image
-            src={`${basePath}lp-2.png`}
+            src={`${basePath}/lp-2.png`}
             alt="tama-no-kaze"
             width={300}
             height={300}
